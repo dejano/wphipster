@@ -1,0 +1,10 @@
+# Ignore everything:
+*
+!index.php
+!.htaccess
+# Except for the themes directories:
+
+!.gitignore
+!config
+!public/content/themes
+
