@@ -6,6 +6,7 @@
 # Except for the themes directories:
 
 !.gitignore
-!config
+!config/
+!public/wp-config.php
 !public/content/themes
 
