@@ -1,0 +1,2 @@
+# wphipster
+Wordpress Theme
