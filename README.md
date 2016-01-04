@@ -1,6 +1,5 @@
 #WP Hipster
-#### Wordpress Theme
-----------
+
 
 ## Get up and running
 1. Clone repo `git clone https://github.com/dejano/wphipster.git`
@@ -10,7 +9,7 @@
     1. Create virtual host.
     2. Environment is defined inside .htaccess `SetEnv APPLICATION_ENV "dev"` where `dev` is environment name. Change `WP_HOME` and `DB_*` constants inside `config/env/dev.php`.
 
-----------
+
 
 
 *  Changing environment (setup your own env and add it to .gitignore)
