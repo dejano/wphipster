@@ -2,6 +2,7 @@
 *
 !index.php
 !.htaccess
+!README.md
 # Except for the themes directories:
 
 !.gitignore
