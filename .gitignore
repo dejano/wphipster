@@ -4,14 +4,21 @@
 #Ignore IDE files
 .idea
 
+#Ignore config files
+config/*
+!config/wordpress.php
+
 #Ignore plugins and uploads
 public/content/*
 
 #ignore Bower components
 public/content/themes/*/bower_components
 
+#Ignore Sass cache
+public/content/themes/*/static/.sass-cache
+
 # Ignore submodules ( is this nessesery? )
-public/site/*
+public/site
 
 !public/content/themes
 
