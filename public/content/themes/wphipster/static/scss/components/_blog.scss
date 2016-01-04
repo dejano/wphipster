@@ -1,0 +1,31 @@
+$article-gap: 7.5rem 0 1rem 0;
+/*------------------------------------*\
+    #BLOG
+\*------------------------------------*/
+.blog-posts article {
+    margin: $article-gap;
+}
+
+.blog-posts {
+    position: relative;
+}
+
+.timeline-string {
+    z-index: -4;
+    width: 40px;
+    height: 95%;
+    position: absolute;
+    background: $primary-color;
+    top: 0;
+    left: 32px;
+}
+
+.event-date {
+    background: $primary-color;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    color: #FFF;
+    display: inline-block;
+    font-size: map_get($font-size, "small");
+}

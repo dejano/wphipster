@@ -1,0 +1,185 @@
+$comments-margin-top: 3.57rem;
+$comment-padding-top: 1.5rem;
+$comment-margin-bottom: 0;
+$comment-padding-aside: 1.5rem;
+$comment-children-margin: 0.5rem;
+$comment-children-margin-bottom: 1.5rem;
+$comment-content-padding: 1.5rem;
+
+/*------------------------------------*\
+    #AUTHOR
+\*------------------------------------*/
+.author {
+
+}
+
+.author__name {
+    color: text-color($text-color-dark, secondary);
+    font-weight: 600;
+    display: inline-block;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+.author__name--post-author,
+.author__name--post-author a {
+    color: $primary-color;
+}
+
+.author__name--meta {
+    font-size: map_get($font-size, small);
+}
+
+article.post--single.post--bg .comments .author__name--meta a,
+.author__name--meta a {
+    color: $text-color-meta;
+}
+
+/*------------------------------------*\
+    #COMMENTS
+\*------------------------------------*/
+.title--comments {
+    color: $text-color-meta;
+    font-size: map_get($font-size, subtitle);
+}
+
+article.post--single.post--bg .title--comments {
+    color: text-color($text-color-light, secondary);
+}
+
+.comment__meta .author__avatar {
+    padding-left: 0;
+}
+
+.comments {
+    margin-top: $comments-margin-top;
+    color: text-color($text-color-dark, secondary);
+}
+
+.comments__list {
+}
+
+.comments__list--child {
+    margin: $comment-children-margin $comment-children-margin $comment-children-margin-bottom;
+}
+
+.comments__list .card-panel {
+    padding: 0;
+}
+
+.comments__list img, .comments__list iframe {
+    max-width: 100%;
+    width: 100%;
+}
+
+.comments__list li {
+    display: inline-block !important;
+    float: none !important;
+}
+
+article.comment {
+    padding-top: $comment-padding-top;
+    margin-bottom: $comment-margin-bottom;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+}
+
+.comment__content, .comment__meta, .comment__reply {
+    padding-left: $comment-padding-aside;
+    padding-right: $comment-padding-aside;
+}
+
+article.comment button a {
+    color: $text-color-light;
+}
+
+.comment--no-children {
+}
+
+article.comment > .comment__content {
+    padding: $comment-content-padding;
+}
+
+/*------------------------------------*\
+    #COMMENT REPLY
+\*------------------------------------*/
+.comment__reply {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    text-align: right;
+}
+
+.depth-1 > article.comment > .comment__reply {
+    padding-right: $comment-children-margin + 0.75rem;
+}
+
+.comments__list--child .comment__reply {
+    padding-right: 0;
+}
+
+#cancel-comment-reply-link {
+    font-size: 1rem;
+}
+
+/*------------------------------------*\
+    #COMMENT FORM
+\*------------------------------------*/
+.comments__list .comment__form {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.comment__form {
+    margin-top: 5rem;
+}
+
+.comment__form, #commentform {
+    display: table;
+    width: 100%;
+}
+
+.comment__form .card-panel {
+    padding: $comment-padding-aside;
+}
+
+.comment__form .input-field:not(.btn) {
+    color: text-color($text-color-dark, secondary);
+}
+
+.comment-submit {
+    margin-right: 10px;
+}
+
+.comment-reply-title {
+    padding: 0 0.75rem;
+    color: $text-color-meta;
+    font-size: map_get($font-size, subtitle);
+}
+
+.comments__list #respond {
+    //padding: 0 20px 20px;
+    //padding: 20px;
+}
+
+.logged-in-as, .comment-notes {
+    padding: 0 0.75rem;
+    color: $text-color-meta;
+}
+
+//article.post--single.post--bg .comment__form .logged-in-as a {
+//    color: $primary-color;
+//}
+//
+//
+//article.post--single.post--bg .comments a {
+//    color: $primary-color;
+//}
+//
+//article.post--single.post--bg .comments .author__name--meta a {
+//    color: $text-color-meta;
+//}
+//
+//article.post--single.post--bg .comment button a {
+//    color: $text-color-light;
+//}

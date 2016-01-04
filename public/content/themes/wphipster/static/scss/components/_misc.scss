@@ -1,0 +1,62 @@
+.links-list {
+
+}
+
+.links-list--category {
+
+}
+
+nav ul a:hover {
+    background-color: transparent;
+}
+
+nav ul li.active {
+    background-color: transparent;
+}
+
+.parallax-container {
+    z-index: 1;
+}
+
+/*------------------------------------*\
+    #HELPERS
+\*------------------------------------*/
+/* Z-INDEX */
+@for $i from -3 to 5 {
+    $selector: '.z-#{abs($i)}';
+    @if $i < 0 {
+        $selector: #{$selector}n;
+    }
+
+    #{$selector} {
+        z-index: $i !important;
+    }
+}
+
+/*------------------------------------*\
+    #WORDPRESS OVERRIDES
+\*------------------------------------*/
+.tagcloud a {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+}
+
+.pagination {
+    margin-top: 30px;
+}
+
+.pagination li {
+    padding: 0 15px;
+    font-size: map_get($font-size, 'normal');
+}
+
+.pagination .active span {
+    line-height: 2.5;
+}

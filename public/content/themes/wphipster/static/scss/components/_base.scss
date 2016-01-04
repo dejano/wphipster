@@ -1,0 +1,35 @@
+body {
+    background: $body-background;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    //margin-top: 100px;
+}
+
+a {
+    //color: $link-color;
+    color: $link-color;
+}
+
+.title {
+    color: $title-color;
+    font-size: map_get($font-size, "title");
+    letter-spacing: $letter-spacing;
+    word-spacing: $word-spacing;
+}
+
+.title--section {
+    display: block;
+    padding-top: $section-title-padding;
+    padding-bottom: $section-title-padding;
+    font-size: map_get($font-size, title);
+    font-weight: 300;
+    letter-spacing: $letter-spacing;
+}
+
+.waves-effect {
+    will-change: initial;
+}

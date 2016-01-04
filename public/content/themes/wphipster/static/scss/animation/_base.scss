@@ -1,0 +1,97 @@
+.pseudo-rectangle {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background-color: rgba(255, 255, 255, .3);
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: rotate(-10deg) scale(1, 1);
+    //@at-root {
+    //
+    //    .card__image {
+    //        display: none;
+    //    }
+    //}
+}
+
+.pseudo-v-lines:nth-of-type(2) {
+
+    &:before, &:after {
+        position: absolute;
+        content: '';
+        background-color: #ffffff;
+        z-index: 3;
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+
+    &:before, &:after {
+        height: 1px;
+        width: 46%;
+        left: 27%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:after {
+        bottom: 0;
+        right: auto;
+        left: 12%;
+    }
+}
+
+.pseudo-v-lines:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+
+    &:before, &:after {
+        width: 1px;
+        height: 46%;
+        margin-left: 2%;
+        margin-right: 2%;
+        top: 27%;
+    }
+
+    &:before {
+        right: 0;
+    }
+
+    &:after {
+        left: 0;
+        bottom: 5%;
+        top: auto;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        content: '';
+        background-color: #ffffff;
+        z-index: 3;
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+}
+
+.char--blinking-cursor {
+    font-weight: 100;
+    @include animation(1s blink step-end infinite);
+}
+
+.animation--light {
+    opacity: 1;
+    transition: all .3s ease-out;
+
+    &:hover {
+        opacity: .9;
+    }
+}

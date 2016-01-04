@@ -1,0 +1,62 @@
+#footer {
+    margin-top: 0;
+    padding-top: 40px;
+    height: 100%;
+    color: text-color($text-color-light, secondary);
+
+    h3, h2 {
+        color: text-color($text-color-light);
+        font-size: 1.64rem;
+        line-height: 110%;
+        margin: 0.82rem 0 0.656rem 0;
+        font-weight: 300;
+    }
+
+    a {
+        color: text-color($text-color-light);
+    }
+    input:not([type]),
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=time],
+    input[type=date],
+    input[type=datetime-local],
+    input[type=tel],
+    input[type=number],
+    input[type=search],
+    textarea.materialize-textarea {
+        &:not(.active) {
+            border-bottom: 1px solid text-color($text-color-light, meta);
+        }
+
+        &:focus:not([readonly]) {
+            border-bottom: 1px solid $secondary-color;
+            box-shadow: 0 1px 0 0 $secondary-color;
+        }
+    }
+}
+
+#footer .input-field label:not(.active) {
+    color: text-color($text-color-light, meta);
+}
+
+#footer .footer-copyright {
+    color: text-color($text-color-light, secondary);
+}
+
+#footer .footer-copyright .container {
+    //max-width: none;
+    //width: 95%;
+}
+
+.scroll-up {
+    z-index: 50;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    @include transition(opacity 0s);
+}

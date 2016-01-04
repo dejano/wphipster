@@ -1,12 +1,18 @@
-# Ignore everything:
-*
-!index.php
-!.htaccess
-!README.md
-# Except for the themes directories:
+# Ignore log files
+*.log
 
-!.gitignore
-!config/
-!public/wp-config.php
+#Ignore IDE files
+.idea
+
+#Ignore plugins and uploads
+public/content/*
+
+#ignore Bower components
+public/content/themes/*/bower_components
+
+# Ignore submodules ( is this nessesery? )
+public/site/*
+
 !public/content/themes
 
+!public/content/index.php

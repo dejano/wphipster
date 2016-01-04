@@ -1,0 +1,87 @@
+//$bg-color: #fff;
+$bg-color: $neutral-color;
+//$bg-color: $primary-color;
+$widget-colors: (
+        "purple": 'base',
+        "deep-purple": 'base',
+        "indigo": 'base',
+        "blue": 'base',
+        "light-blue": 'base',
+        "cyan": 'base',
+        "teal": 'base',
+        "green": 'base',
+        "light-green": 'base',
+        "lime": 'base',
+        "amber": 'base',
+        "orange": 'base',
+        "deep-orange": 'darken-4',
+        "brown": 'base',
+        "blue-grey": 'base',
+        "grey": 'base',
+) !default;
+
+$widget-text-color: text-color($lightness, primary);
+$link-color: $widget-text-color;
+$widget-text-color-secondary: text-color($lightness, secondary) !default;
+$widget-text-color-meta: text-color($lightness, meta) !default;
+
+.sidebar {
+    margin: 11.2rem 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.title--widget {
+    color: $widget-text-color;
+    text-align: center;
+    font-size: map_get($font-size, subtitle);
+    font-weight: 300;
+}
+
+.widget {
+    color: $widget-text-color-secondary;
+    margin: 0;
+    border-radius: 0;
+    padding: $padding-top $padding-right $padding-bottom $padding-left;
+    background-color: $bg-color;
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+
+    a {
+        color: $link-color;
+    }
+
+    label {
+        color: $widget-text-color-meta;
+    }
+}
+
+.widget:first-of-type {
+    border-top: none;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+.widget:last-of-type {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+// dynamic sidebar from primary color
+@for $i from 10 to 1 {
+    $child: 10 - $i;
+    $color: nth($cyan, $i);
+    $bg: nth($color, 2);
+    .widget--colorful-primary:nth-of-type(#{$child}) {
+        @include dynamic-sidebar($text-color-light, $bg);
+    }
+}
+
+// dynamic sidebar from defined list of colors
+@for $i from 1 through length($widget-colors) {
+    $color-map: nth($widget-colors, $i);
+    $color-modifier: nth($color-map, 2);
+    $color: nth($color-map, 1);
+    $bg: color($color, $color-modifier);
+    .widget--colorful:nth-of-type(#{$i}) {
+        @include dynamic-sidebar($text-color-light, $bg);
+    }
+}

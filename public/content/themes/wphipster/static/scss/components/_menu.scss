@@ -1,0 +1,42 @@
+
+.menu--main {
+}
+
+.menu__item {
+    position: relative;
+    color: #fff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    top: -2px;
+    transition: border-bottom-color 0.1s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+
+    .active, &:hover {
+        border-bottom-color: rgba(255, 255, 255, 0.5);
+    }
+
+    & a:hover {
+        background-color: transparent;
+    }
+}
+
+.menu__item--has-children {
+    opacity: 0;
+    display: none;
+}
+
+.button--mobile-menu,
+.button--mobile-menu i.material-icons {
+    line-height: $header-short-height;
+
+    @media #{$small-and-down} {
+        &,
+        & i.material-icons {
+            line-height: $header-short-height-mobile;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+$section-title-padding: 3.57rem;
+$card-padding-aside: 25px;
+$card-padding-top-bottom: 30px;
+/*------------------------------------*\
+    #RELATED POSTS SECTION
+\*------------------------------------*/
+.title--related {
+    padding-top: 0;
+    font-size: map_get($font-size, subtitle);
+    //text-shadow: 1px 1px #000;
+    letter-spacing: $letter-spacing;
+    color: $text-color-light;
+}
+
+.related {
+    overflow: hidden;
+    .col {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.related-wrapper {
+    padding: 0 $section-padding $section-padding;
+    background-color: rgb(250, 250, 250);
+    margin-bottom: 0;
+}
+
+.related-wrapper .row .title--section-related {
+    margin-left: $card-padding-aside;
+    padding-top: $section-title-padding;
+    padding-bottom: $section-title-padding;
+}
+
+.card--related {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-color: $neutral-color;
+    min-height: 256px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+
+    @media #{$medium-and-down} {
+        & {
+            min-height: 256px;
+        }
+    }
+
+    @media #{$small-and-down} {
+        & {
+            min-height: 300px;
+        }
+    }
+
+    &:hover {
+        z-index: 4;
+    }
+
+}
+
+.card--related .card__content {
+    padding: $card-padding-top-bottom $card-padding-aside;
+    color: $text-color-light;
+}
+
+.related__meta {
+    a {
+        color: text-color($text-color-light, primary);
+    }
+    color: text-color($text-color-light, secondary);
+    //color: $text-color-light;
+    background-color: transparent;
+    border-top: none;
+    padding: 25px;
+    //font-size: map_get($font-size, "normal");
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: 200px;
+    overflow: hidden;
+}
+

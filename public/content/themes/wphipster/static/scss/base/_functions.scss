@@ -1,0 +1,63 @@
+@function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+
+    @for $i from 1 through 10 {
+        $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+        $x0: $x1;
+    }
+
+    @return $x1;
+}
+
+// brightness math from https://gist.github.com/jlong/f06f5843104ee10006fe
+$red-magic-number: 241;
+$green-magic-number: 691;
+$blue-magic-number: 68;
+$brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;
+
+@function brightness($color) {
+    // Extract color components
+    $red-component: red($color);
+    $green-component: green($color);
+    $blue-component: blue($color);
+
+    // Calculate a brightness value in 3d color space between 0 and 255
+    $number: sqrt((($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number)) / $brightness-divisor);
+
+    // Convert to percentage and return
+    @return 100% * $number / 255;
+}
+
+//@function text-color($color, $type: primary, $light: $text-color-light, $dark: $text-color-dark) {
+//    $text-color: #fff;
+//    $opacity: 1;
+//    $index: index($text-types, $type);
+//    @if brightness($color) < 65% {
+//        // light text, dark background
+//        $text-color: $light;
+//        $opacity: nth($text-light-opacity, $index);
+//    } @else {
+//        $text-color: $dark;
+//        $opacity: nth($text-dark-opacity, $index);
+//    }
+//    @return rgba($text-color, $opacity);
+//}
+
+@function text-color($color, $type: primary) {
+    $text-color: $text-color-light;
+    $text-opacity: $text-light-opacity;
+    @if $color == 'lighten' {
+        $text-color: $text-color-dark;
+        $text-opacity: $text-dark-opacity;
+    } @else if $color != 'darken' {
+        $text-color: $color;
+    }
+
+    $index: round(index($text-types, $type));
+    @if $index == null {
+        $index: 1;
+    }
+    $opacity: nth($text-opacity, $index);
+    @return rgba($text-color, $opacity);
+}
