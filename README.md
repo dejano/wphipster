@@ -3,7 +3,7 @@
 
 ## Get up and running
 1. Clone repo `git clone https://github.com/dejano/wphipster.git`
-2. `git submodules init`
+2. `git submodules init`  
 `git submodules update`
 3. Setup environment
     1. Create virtual host.
