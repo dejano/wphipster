@@ -8,12 +8,9 @@
 3. Setup environment
     1. Create virtual host.
     2. Environment is defined inside .htaccess `SetEnv APPLICATION_ENV "dev"` where `dev` is environment name. Change `WP_HOME` and `DB_*` constants inside `config/env/dev.php`.
-
-
-
-
-
-
+  
+  
+  
 *  Changing environment (setup your own env and add it to .gitignore)
 	  * Set `SetEnv APPLICATION_ENV "envName"` inside .htaccess. 
 	  * Create file inside `config/env/envName.php`.
@@ -43,4 +40,5 @@
 
 
 ----------
+  
 Demo content http://wptest.io/
