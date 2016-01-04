@@ -52,36 +52,8 @@ class WP_Hipster_Theme extends \wp_hipster\core\Theme
 \$secondary-color-string: "{$options['secondary_color']}";
 \$neutral-color: color("{$options['primary_color']}", "$lightness-3");
 SCSS;
-            $filename = dirname(__FILE__) . '/../static/scss/_swarm.scss';
+            $filename = dirname(__FILE__) . '/../static/scss/_generated.scss';
             file_put_contents($filename, $scss . PHP_EOL);
-
-            SassCompiler::run($this->get_assets_dir() . '/scss/', $this->get_assets_dir() . '/css/');
-        }
-    }
-
-    function after_primary_color_save($field, $value, $old_value)
-    {
-        if ($value != $old_value) {
-            $scss = <<<EOT
-\$primary-color: color($value, "base");
-EOT;
-            // TODO: This is temporary
-            $filename = dirname(__FILE__) . '/_swarm.scss';
-            file_put_contents($filename, $scss . PHP_EOL);
-
-            SassCompiler::run($this->get_assets_dir() . '/scss/', $this->get_assets_dir() . '/css/');
-        }
-    }
-
-    function after_secondary_color_save($field, $value, $old_value)
-    {
-        if ($value != $old_value) {
-            $scss = <<<EOT
-\$secondary-color: color($value, "base");
-EOT;
-            // TODO: This is temporary
-            $filename = dirname(__FILE__) . '/_swarm.scss';
-            file_put_contents($filename, $scss . PHP_EOL, FILE_APPEND);
 
             SassCompiler::run($this->get_assets_dir() . '/scss/', $this->get_assets_dir() . '/css/');
         }

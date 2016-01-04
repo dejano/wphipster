@@ -4,7 +4,6 @@ WP Hipster
 
 
 ## Get up and running
----
 
 1. Clone repo `git clone https://github.com/dejano/wphipster.git`
 2. Get Wordpress from github repo
