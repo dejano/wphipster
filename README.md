@@ -23,18 +23,18 @@
 ## Directory structure
 
 ```
-├── config/ 		# configuration
+├── config/		# configuration
 ├── public/
 │   ├── content/	# themes, plugins, uploads
 │   ├── ├── plugins/
 │   ├── ├── themes/
 │   ├── ├── ├── wphipster/
 │   ├── ├── ├── ├── bower_components/
-│   ├── ├── ├── ├── config/				# framework config files (theme specific)
+│   ├── ├── ├── ├── config/			# framework config files (theme specific)
 │   ├── ├── ├── ├── framework/				
 │   ├── ├── ├── ├── include/			# theme files
 │   ├── ├── ├── ├── partials/			# view files
-│   ├── ├── ├── ├── static/				# js, sass and css
+│   ├── ├── ├── ├── static/			# js, sass and css
 │   ├── ├── uploads/
 │   ├── site/		# wordpress files
 ```
